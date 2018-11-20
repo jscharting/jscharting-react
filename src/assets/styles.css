@@ -1,0 +1,54 @@
+.complex-wrapper {
+	width:890px;
+	height:1359px;
+	background:url('images/food.gif');
+	background:rgba(255,255,255,0) url('images/food.svg');
+	background-size: cover;
+	background-repeat:no-repeat;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	left:-25px;
+}
+
+.complex-wrapper .chart1 {
+	position:absolute;
+	margin-top:220px;
+	margin-left:60px;
+	width:240px;
+}
+
+.complex-wrapper .chart2 {
+	position:absolute;
+	margin-top:415px;
+	margin-left:405px;
+	width:150px;
+}
+
+.complex-wrapper .chart3 {
+	position:absolute;
+	margin-top:415px;
+	margin-left:657px;
+	width:150px;
+}
+
+.complex-wrapper .chart4 {
+	position:absolute;
+	margin-top:695px;
+	margin-left:625px;
+	width:260px;
+}
+
+.complex-wrapper .chart5 {
+	position:absolute;
+	margin-top:1053px;
+	margin-left:127px;
+	width:62px;
+}
+
+.complex-wrapper .chart6 {
+	position:absolute;
+	margin-top:1063px;
+	margin-left:565px;
+	width:62px;
+}
