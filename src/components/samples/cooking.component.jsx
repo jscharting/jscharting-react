@@ -193,11 +193,11 @@ export default class CookingComponet extends React.Component {
 		return (
 			<div className="complex-wrapper">
 				<JSCharting {...config1}></JSCharting>
-				{/* <JSCharting {...config2}></JSCharting>
+				<JSCharting {...config2}></JSCharting>
 				<JSCharting {...config3}></JSCharting>
 				<JSCharting {...config4}></JSCharting>
 				<JSCharting {...config5}></JSCharting>
-				<JSCharting {...config6}></JSCharting> */}
+				<JSCharting {...config6}></JSCharting>
 			</div>
 		);
 	}

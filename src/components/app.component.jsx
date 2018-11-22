@@ -6,13 +6,14 @@ import CookingComponent from './samples/cooking.component.jsx';
 import CalendarEventsComponent from './samples/calendar-events.component.jsx';
 import CalendarInjuriesComponent from './samples/calendar-injuries.component.jsx';
 import RadarCollnvertedComponent from './samples/radar-collnverted.component.jsx';
+import MicroProgressComponent from './samples/micro-progress.component.jsx';
 
 const samples = [
-	// {
-	// 	name: 'Cooking',
-	// 	description: 'Cooking dashboard using JavaScript charts.',
-	// 	path: '/cooking'
-	// },
+	{
+		name: 'Cooking',
+		description: 'Cooking dashboard using JavaScript charts.',
+		path: '/cooking'
+	},
 	{
 		name: 'Calendar Events',
 		description: 'An events calendar based on csv data.',
@@ -27,6 +28,11 @@ const samples = [
 		name: 'Radar Col. Inverted',
 		description: 'Radar chart with inverted column series.',
 		path: '/radar-collnverted'
+	},
+	{
+		name: 'Micro Progress',
+		description: 'Demonstrate using JSC.label() with microcharts.',
+		path: '/samples/micro-progress'
 	}
 ];
 
@@ -88,11 +94,12 @@ export default class AppComponent extends React.Component {
 						</div>
 					</div>
 					<Switch>
-						<Redirect from="/" to="calendar-events" exact />
-						{/* <Route path="/cooking" component={CookingComponent}></Route> */}
+						<Redirect from="/" to="cooking" exact />
+						<Route path="/cooking" component={CookingComponent}></Route>
 						<Route path="/calendar-events" component={CalendarEventsComponent}></Route>
 						<Route path="/calendar-injuries" component={CalendarInjuriesComponent}></Route>
 						<Route path="/radar-collnverted" component={RadarCollnvertedComponent}></Route>
+						<Route path="/samples/micro-progress" component={MicroProgressComponent}></Route>
 					</Switch>
 				</div>
 			</Router>

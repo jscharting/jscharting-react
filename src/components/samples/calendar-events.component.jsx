@@ -97,7 +97,7 @@ ${JSC.formatDate(new Date(row[0]), 't')} - ${JSC.formatDate(new Date(row[1]), 't
 	render() {
 		return (
 			<div>
-				<JSCharting {...config}></JSCharting>
+				<JSCharting {...this.state.config}></JSCharting>
 			</div>
 		);
 	}

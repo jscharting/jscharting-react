@@ -52,3 +52,9 @@
 	margin-left:565px;
 	width:62px;
 }
+
+.progress-label {
+	height: 60px;
+	margin: 0px auto;
+	max-width: 320px;
+}
