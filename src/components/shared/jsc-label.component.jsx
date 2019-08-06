@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import JSC from './jscharting-common.jsx';
+
 export default class JSCLabel extends React.Component {
     constructor(props) {
 		super(props);

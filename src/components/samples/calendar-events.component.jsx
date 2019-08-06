@@ -2,6 +2,8 @@ import React from 'react';
 
 import JSCharting from '../shared/jscharting.component.jsx';
 
+import JSC from '../shared/jscharting-common.jsx';
+
 const config = {
 	containerHeight: '600px',
 	debug: true,
