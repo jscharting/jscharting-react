@@ -12,10 +12,10 @@ This set of samples demonstrate how to use JSCharting with React library. Sample
 
 ### How to use
 
-1) Use `<script>` tags in your HTML file to load JSCharting.
+1) Install jscharting npm package.
 
-```html
-<script type="text/javascript" src="https://code.jscharting.com/2.7.0/jscharting.js"></script>
+```console
+npm install jscharting --save-dev
 ```
 
 2) In your react component import JSCharting.
