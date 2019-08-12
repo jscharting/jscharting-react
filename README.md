@@ -12,13 +12,33 @@ This set of samples demonstrate how to use JSCharting with React library. Sample
 
 ### How to use
 
-1) Install jscharting npm package.
+Install the necessary packages including JSCharting.
 
 ```console
-npm install jscharting --save-dev
+npm install
 ```
 
-2) In your react component import JSCharting.
+Run the webpack dev server: localhost:8080
+
+```console
+npm run start
+```
+
+Or build the dashboard manually.
+
+```console
+npm run build
+```
+
+Or.
+
+```console
+npm run build-prod
+```
+
+### How it works
+
+The webpack build copies all needed resources to the ./dist/ folder. A component of the charting library is created in ./src/components/shared/jscharting.component.jsx to provide a simple way of library usage.
 
 ```javascript
 import React from 'react';
