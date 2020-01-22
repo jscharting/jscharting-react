@@ -1,0 +1,39 @@
+{
+  "name": "jscharting-react-examples",
+  "version": "1.0.0",
+  "description": "Examples using the JSCharting plugin for react.",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --display-error-details",
+    "build": "webpack",
+    "build-prod": "webpack -p"
+  },
+  "author": "JSCharting <support@jscharting.com> (https://jscharting.com/support.htm)",
+  "bugs": {
+    "email": "support@jscharting.com"
+  },
+  "license": "jscharting.com/store/",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "jscharting-react": "^1.1.0-0",
+    "jscharting": "^2.9.0-6",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "history": "^4.10.1",
+    "html-loader": "^0.5.5",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-jss": "^10.0.0",
+    "react-router-dom": "^5.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}

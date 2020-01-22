@@ -1,0 +1,1 @@
+JSCharting offers both free and commercial licenses. To obtain a license (including free licenses), please visit https://jscharting.com/store/

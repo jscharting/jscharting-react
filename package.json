@@ -1,30 +1,51 @@
 {
   "name": "jscharting-react",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "start": "webpack-dev-server --mode development --display-error-details",
-    "build": "webpack",
-    "build-prod": "webpack -p"
+  "version": "1.1.0-0",
+  "description": "JSCharting plugin for react",
+  "homepage": "https://jscharting.com",
+  "author": "JSCharting <support@jscharting.com> (https://jscharting.com/support.htm)",
+  "bugs": {
+    "email": "support@jscharting.com"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
+  "license": "jscharting.com/store/",
+  "main": "dist/jscharting-react.js",
+  "module": "dist/jscharting-react.es.js",
+  "jsnext:main": "dist/jscharting-react.es.js",
+  "scripts": {
+    "build": "rollup -c",
+    "build-examples": "cd examples && npm install && npm run build",
+    "start-examples": "cd examples && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jscharting/jscharting-react.git"
+  },
+  "keywords": [
+    "charts",
+    "dataviz",
+    "graphs",
+    "visualization",
+    "javascript-chart",
+    "javascript",
+    "react"
+  ],
+  "dependencies": {
+    "jscharting": "^2.9.0-6"
+  },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.0.4",
-    "history": "^4.9.0",
-    "html-loader": "^0.5.5",
-    "jscharting": "^2.8.0-1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-jss": "^8.6.1",
-    "react-router-dom": "^5.0.1",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
-  }
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "files": [
+    "dist"
+  ]
 }

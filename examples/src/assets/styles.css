@@ -1,0 +1,102 @@
+.complex-wrapper {
+	width: 890px !important;
+    height: 1359px;
+    background: url('images/food.gif');
+    background: rgba(255,255,255,0) url('images/food.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: -25px;
+}
+
+.complex-wrapper .chart1 {
+	position:absolute;
+	margin-top:220px;
+	margin-left:60px;
+	width:240px;
+}
+
+.complex-wrapper .chart2 {
+	position:absolute;
+	margin-top:350px;
+    margin-left:386px;
+    width:170px;
+}
+
+.complex-wrapper .chart3 {
+	position:absolute;
+	margin-top:350px;
+    margin-left:647px;
+    width:170px;
+}
+
+.complex-wrapper .chart4 {
+	position:absolute;
+	margin-top:695px;
+	margin-left:625px;
+	width:260px;
+}
+
+.complex-wrapper .chart5 {
+	position:absolute;
+	margin-top:1053px;
+	margin-left:127px;
+	width:62px;
+}
+
+.complex-wrapper .chart6 {
+	position: absolute;
+    margin-top: 1063px;
+    margin-left: 565px;
+    width: 62px;
+}
+
+.progress-label {
+	height: 60px;
+	margin: 0 auto;
+	max-width: 320px;
+}
+
+.examplesHead{
+	background:#e2e7ef;
+	padding:15px 15px 10px 15px;
+	min-height: 60px;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.examplesDescripton {
+	text-align: center;
+	margin: 15px 0 0 0;
+}
+
+.examplesItems{
+	float:right;
+	margin:13px;
+}
+
+.examplesLabel {
+	font-family: sans-serif;
+	top: 52px;
+	position: absolute;
+	left: 125px;
+}
+
+.examplesButton {
+	background-color: #0876ff;  
+	border-radius: 4px;
+	border-width: 0px;
+	color: white;
+	padding: .5em;
+	font-family: sans-serif;
+	font-size:.9em;
+	margin-right:10px;
+}
+
+.examplesButton:focus,
+.examplesButton:hover {
+	background-color: #05418c;
+}

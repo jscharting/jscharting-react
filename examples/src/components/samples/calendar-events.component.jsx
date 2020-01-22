@@ -1,19 +1,9 @@
 import React from 'react';
-
-import JSCharting from '../shared/jscharting.component.jsx';
-
-import JSC from '../shared/jscharting-common.jsx';
+import { JSCharting, JSC } from 'jscharting-react';
 
 const config = {
-	containerHeight: '600px',
-	debug: true,
 	type: 'calendar month solid',
 	title: {
-		position: 'full',
-		boxVisible: true,
-		shadow: false,
-		outline: 'none',
-		fill: 'none',
 		margin_bottom: 15,
 		label: {
 			text: 'July 2018',
@@ -25,7 +15,6 @@ const config = {
 			}
 		}
 	},
-	defaultBox_boxVisible: false,
 	yAxis_visible: false,
 	legend_visible: false,
 	calendar: {
@@ -53,53 +42,55 @@ const config = {
 	}
 };
 
+const divStyle = {
+	maxWidth: '900px',
+	height: '600px',
+	margin: '0px auto'
+};
 
 export default class CalendarEventsComponent extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = { config: config };
 	}
 
 	componentDidMount() {
 		JSC.fetch('./assets/resources/events_data.csv')
-			.then((response) => {
+			.then(response => {
 				return response.text();
 			})
-			.then((text) => {
+			.then(text => {
 				const data = JSC.parseCsv(text).data;
-				config.series = [{
-					points: data.map(function (row) {
-						const labelText =
-							`<br>
+				config.series = [
+					{
+						points: data.map(function(row) {
+							const labelText = `<br>
 <span style="color:#78909c;font-size:12px; font-weight:normal">${row[2]}</span>
 <br>
 <span style="font-size:8px; font-weight:normal; color:#b0bec5;">
 ${JSC.formatDate(new Date(row[0]), 't')} - ${JSC.formatDate(new Date(row[1]), 't')}
 </span>`;
-						return {
-							date: [
-								row[0],
-								row[1]
-							],
-							attributes: {
-								events: [labelText]
-							}
-						};
-					})
-				}];
+							return {
+								date: [row[0], row[1]],
+								attributes: {
+									events: [labelText]
+								}
+							};
+						})
+					}
+				];
 
 				this.setState({ config: config });
 			})
-			.catch((error) => {
+			.catch(error => {
 				console.error(error);
 			});
 	}
 
 	render() {
 		return (
-			<div>
-				<JSCharting {...this.state.config}></JSCharting>
+			<div style={divStyle}>
+				<JSCharting options={this.state.config} />
 			</div>
 		);
 	}
