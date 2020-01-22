@@ -105,11 +105,14 @@ const config = {
 export default class SimpleChartComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state={ options: config, mutable: false};
+        this.state = {
+            options: config, 
+            mutable: false
+        };
     }
     render() {
         return (
-            <div><JSCharting options={...this.state.options} mutable={this.state.mutable} /></div>
+            <div><JSCharting options={this.state.options} mutable={this.state.mutable} /></div>
         );
     }
 }
@@ -175,7 +178,7 @@ need to be passed to the chart.
 Using `mutable == false` is sometimes useful when a chart must be drastically modified. In this mode, all options should be
  available in the state object for a new chart instance to use.
 
-See [animating series and points](...) for more information.
+See [animating series and points](https://jscharting.com/tutorials/types/js-series-point-animation-chart/) for more information.
 
 ```jsx 
 export default class setStateUpdateComponent extends React.Component {
@@ -209,7 +212,7 @@ constructor(props) {
     render() {
         return (
             <div style={divStyle}>
-                <JSCharting options={{ ...this.state.options }} mutable={this.state.mutable} />
+                <JSCharting options={this.state.options} mutable={this.state.mutable} />
                 <button onClick={this.updateData}>Update Data</button>
             </div>
         );
@@ -268,7 +271,7 @@ constructor(props) {
     render() {
         return (
             <div style={divStyle}>
-                <JSCharting ref={this.chart} options={{ ...this.state.options }} mutable={this.state.mutable} />
+                <JSCharting ref={this.chart} options={this.state.options } mutable={this.state.mutable} />
                 <button onClick={this.updateData}>Update Data</button>
             </div>
         );
@@ -324,7 +327,7 @@ export default class LiveDataLineComponent extends React.Component {
     componentDidMount() {
         // Using the chart reference. 
         this.chart && 
-            this.chart.series.push({name: 'S1", points:[ {x:5,y:10}, {x:5,y:10}] });
+            this.chart.series.push({name: 'S1', points:[ {x:5,y:10}, {x:5,y:10}] });
     }
     render() {
         return (
