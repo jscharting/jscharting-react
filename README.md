@@ -1,15 +1,19 @@
 # JSCharting for React
 
+![npm](https://img.shields.io/npm/v/jscharting-react)
+![David](https://img.shields.io/david/jscharting/jscharting-react)
+![Twitter Follow](https://img.shields.io/twitter/follow/jscharting?label=Follow&style=social)
+
 <a href="https://jscharting.com"><img src="https://jscharting.com/images/logo_short.svg" style="margin:0px" align="left" hspace="10" vspace="6" width="200" ></a>
 
-**JSCharting** is a JavaScript chart library for visualizing your data across all devices and platforms. Every JSCharting license includes the full suite of 150+ advanced chart types plus Gantt charts, JavaScript Org Charts, interactive stock and finance charts, seamless grid and calendar charts, JavaScript maps, and micro charts all for no additional charge. JSCharting has all the features you need and many you don't yet know you want.
+**JSCharting** is a JavaScript data visualization library offering seamless usage with React across all devices and platforms. Every JSCharting license includes a full suite of 150+ chart types including standards such as pie charts, line charts, donut and bar charts. In addition, advanced chart types including Gantt charts, JavaScript Org Charts, interactive charts for stock and finance, seamless grid and calendar charts, JavaScript maps, and micro charts all for no additional charge. JSCharting has all the features you need and many you don't yet know you want.
 
 Example Charts: 
 [Chart Types](https://jscharting.com/examples/chart-types/)
 | [Feature Examples](https://jscharting.com/examples/chart-features/)
 
-## Official JSCharting plugin for React
-A plugin to use [JSCharting](https://jscharting.com/) as a component in react projects.
+## Official JSCharting plugin for ReactJS
+A react wrapper to use [JSCharting](https://jscharting.com/) charting library as a react chart component.
 ## Table of Contents
 
 1. [Install](#install)
@@ -53,14 +57,14 @@ npm run build-examples
 ### Usage
 
 #### Simple example
-This example shows how you can use the `JSCharting` component of the `jscharting-react` plugin in your react projects.
+This example shows how you can use the `JSCharting` component of the `jscharting-react` module to make a bar chart.
 
 ```jsx 
 import React from 'react';
 import { JSCharting } from 'jscharting-react';
 
 const config = {
-    type: 'column',
+    type: 'horizontal column',
     series: [
         {
             points: [
@@ -72,25 +76,32 @@ const config = {
     ]
 };
 
+const divStyle = {
+	maxWidth: '700px',
+	height: '400px',
+	margin: '0px auto'
+};
+
 export default class SimpleChartComponent extends React.Component {
     render() {
         return (
-            <div><JSCharting options={config} /></div>
+            <div style={divStyle}><JSCharting options={config} /></div>
         );
     }
 }
 
 ```
 
-This example includes connects the chart to the components state. With this setup you can call the 
-component `setState()` function to update the chart. See the [Updating Chart](#updating-charts) section for more information and on using the `mutable` option. 
+This line chart example binds the chart to the components state. With this setup you can call the 
+component `setState()` function to update the chart. See the [Updating Chart](#updating-charts) section 
+for more information on using the `mutable` option. 
 
 ```jsx
 import React from 'react';
 import { JSCharting } from 'jscharting-react';
 
 const config = {
-    type: 'column',
+    type: 'line',
     series: [
         {
             points: [
@@ -122,13 +133,13 @@ export default class SimpleChartComponent extends React.Component {
 
 #### JSCharting with TypeScript
 
-The following example demonstrates how you can use the JSCharting declarations for code completion in TypeScript (.tsx) files.
+The following area chart example demonstrates how you can use the JSCharting declarations for code completion in TypeScript (.tsx) files.
 ```tsx
 import * as React from 'react';
 import { JSC, JSCharting } from 'jscharting-react';
 
 const config: JSC.JSCChartConfig = {
-    type: 'column',
+    type: 'area',
     series: [
         {
             name: '2020 Sales',
@@ -148,10 +159,10 @@ export default class typeScriptComponent extends React.Component {
     }
 }
 ```
-You can check out the radar example which uses Typescript.
+You can check out the radar example in the `examples/` react application which uses Typescript and the declarations file.
 
 #### JSCharting Component Options
-The following options are available with the `JSCharting` component. 
+These configurable options are available with the `JSCharting` component.
 
 | Parameter | Type |  Description |
 | --------- | :----: | ----------- |
@@ -173,7 +184,7 @@ through the `setState()` function are passed to the chart using chart.options().
 reset the chart with a new instance. 
 
 Charts with `mutable == true` option perform better and allow charts to animate changes. Only new options that are changing 
-need to be passed to the chart. 
+need to be passed to the chart. You can animate chart updates using this more.
 
 Using `mutable == false` is sometimes useful when a chart must be drastically modified. In this mode, all options should be
  available in the state object for a new chart instance to use.
@@ -240,7 +251,7 @@ This line will make all points on a chart with y values greater than 50 red. Ano
 chart.series(0).points(0).options({y: 100})
 ```
 
-This selects the first point in the first series and changes the points y value to 100.
+This selects the first point in the first series and changes the point's y value to 100.
 
 In contrast, the `setState()` method with `mutable==true` can only call `chart.options()`.
 
@@ -270,8 +281,8 @@ constructor(props) {
     }
     render() {
         return (
-            <div style={divStyle}>
-                <JSCharting ref={this.chart} options={this.state.options } mutable={this.state.mutable} />
+            <div>
+                <JSCharting ref={this.chart} options={this.state.options} mutable={this.state.mutable} />
                 <button onClick={this.updateData}>Update Data</button>
             </div>
         );
@@ -282,7 +293,7 @@ constructor(props) {
 ### Chart resources
 The JSCharting library includes resources (modules, mapping data, polyfills, icons library) that load automatically 
 when they are needed. The examples webpack build copies these resources to the `./dist/jsc/` folder. 
-The examples app component calls the `JSC.defaults()` function to set `baseUrl` option with this path globally in 
+The examples app component `examples/src/components/app.component.jsx` file calls the `JSC.defaults()` function to set `baseUrl` option with this path globally in 
 its constructor. All subsequent charts will be aware of the location of these resources. 
 
 ```jsx
@@ -343,7 +354,7 @@ export default class LiveDataLineComponent extends React.Component {
 ### JSCLabel Component
 This plugin also contains an implementation of the `JSCLabel` component for react. 
 It can be used to create very efficient microchart SVG images in your react projects. 
-This example demonstrates how it can be used.
+Here's a simple example.
 
 ```jsx
 
