@@ -1,3 +1,12 @@
+## [1.1.0-4] - 2020-01-27
+### Added
+- JSCGrid data grid support
+- Add build test
+- Missing details in README.md
+
+### Changed
+- JSCGrid uses `options` prop
+
 ## [1.1.0-3] - 2020-01-24
 
 ### Added

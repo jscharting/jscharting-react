@@ -1,6 +1,6 @@
 {
   "name": "jscharting-react-examples",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Examples using the JSCharting plugin for react.",
   "scripts": {
     "start": "webpack-dev-server --mode development --display-error-details",
@@ -17,7 +17,7 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "jscharting-react": "^1.1.0-2",
+    "jscharting-react": "^1.1.0-4",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "babel-loader": "^8.0.6",

@@ -3,6 +3,10 @@ import { JSCharting, JSC } from 'jscharting-react';
 
 const config = {
 	type: 'calendar month solid',
+	toolbar: {
+		visible: true,
+		items_export_visible: false
+	},
 	title: {
 		margin_bottom: 15,
 		label: {

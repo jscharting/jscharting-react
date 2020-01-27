@@ -1,6 +1,6 @@
 {
   "name": "jscharting-react",
-  "version": "1.1.0-3",
+  "version": "1.1.0-4",
   "description": "JSCharting plugin for react",
   "homepage": "https://jscharting.com",
   "author": "JSCharting <support@jscharting.com> (https://jscharting.com/support.htm)",
@@ -14,7 +14,8 @@
   "scripts": {
     "build": "rollup -c",
     "build-examples": "cd examples && npm install && npm run build",
-    "start-examples": "cd examples && npm install && npm run start"
+    "start-examples": "cd examples && npm install && npm run start",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -30,16 +31,21 @@
     "react"
   ],
   "dependencies": {
-    "jscharting": "^2.9.0-6"
+    "jscharting": "^2.9.0-7"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-test-renderer": "^16.12.0",
     "rollup": "^1.27.14",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",

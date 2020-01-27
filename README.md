@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/jscharting-react)
 ![David](https://img.shields.io/david/jscharting/jscharting-react)
-![Twitter Follow](https://img.shields.io/twitter/follow/jscharting?label=Follow&style=social)
+
 
 <a href="https://jscharting.com"><img src="https://jscharting.com/images/logo_short.svg" style="margin:0px" align="left" hspace="10" vspace="6" width="200" ></a>
 
@@ -27,6 +27,7 @@ A react wrapper to use [JSCharting](https://jscharting.com/) charting library as
 3. [Chart resources](#chart-resources)
 4. [Getting a chart reference](#getting-a-chart-reference)
 5. [JSCLabel Component](#jsclabel-component)
+6. [JSCGrid Component](#jscgrid-component)
 
 
 
@@ -365,7 +366,7 @@ export default class MicroChartComponent extends React.Component {
         const data = [5,2,3,5,1];
         return (
             <div>
-                <JSCLabel config={`<chart arealine data=${data} width=200 height=50>`} />
+                <JSCLabel options={`<chart arealine data=${data} width=200 height=50>`} />
             </div>
         );
     }
@@ -374,4 +375,57 @@ export default class MicroChartComponent extends React.Component {
 ```
 
 See the [microcharts tutorial](https://jscharting.com/tutorials/types/js-microcharts/) for configuration syntax and more information.
+
+### JSCGrid Component
+The `JSCGrid` data grid component is also included. You can use it to to create data grids from JSON arrays.
+Here's a data grid example.
+
+```jsx
+
+import React from 'react';
+import { JSCGrid } from 'jscharting-react';
+
+export default class DataGridComponent extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			options: {
+				data: [
+					['Art', 5, 10],
+					['Greg', 3, 6],
+					['Olivia', 11, 8],
+					['Steve', 11, 4],
+					['Anna', 3, 8]
+				],
+				columns: [
+					{ header: 'Name' },
+					{ header: 'Value One' },
+					{ header: 'Value Two' },
+					{ header: 'Sum', value: '{%1+%2}' }
+				]
+			}
+		};
+	}
+
+	render() {
+		return (
+			<JSCGrid options={this.state.options} />
+		);
+	}
+}
+
+```
+
+The available options for the data grid component are.
+
+| Parameter | Type |  Description |
+| --------- | :----: | ----------- |
+| `options` | object | JSCGrid configuration object. Please refer to the [API documentation](https://jscharting.com/documentation/#node=Home.API.json.Types.grid). |
+| `mutable` | boolean | (Optional) When set to true, `grid.options()` is called with the updated props instead of recreating the grid instance. 
+| `callback` | function | (Optional) Function that is called when the grid is finished rendering. The first argument of the callback function is a reference to the created grid.|
+| `className` | string | (Optional) Applies the class name to the grid container div element. It allows controlling grid size and layout with external CSS. |
+
+See the [data grid tutorial](https://jscharting.com/tutorials/types/js-data-grid/) for configuration syntax and more information.
+
 

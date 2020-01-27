@@ -30,11 +30,24 @@ export interface JSCLabelComponentProps extends React.Props<any> {
     /**
      * JSCLabel configuration.
      * See Also:
-     * {@link https://jscharting.com/tutorials/types/js-microcharts/ | API Documentation.}
+     * {@link https://jscharting.com/tutorials/types/js-microcharts/ | JSCLabel Tutorial}
      */
-    config: any;
+    options: any;
     /**
      * (Optional) Applies the class name to the chart container div element. It allows controlling chart size and layout with external CSS.
+     */
+    className?: string;
+}
+
+export interface JSCGridComponentProps extends React.Props<any> {
+    /**
+     * JSCGrid configuration.
+     * See Also:
+     * {@link https://jscharting.com/tutorials/types/js-data-grid/ | JSCGrid Tutorial}
+     */
+    options: any;
+    /**
+     * (Optional) Applies the class name to the grid container div element. It allows controlling grid size and layout with external CSS.
      */
     className?: string;
 }
@@ -60,4 +73,14 @@ declare class JSCLabel extends React.Component<JSCLabelComponentProps> {
     destroy(): void;
     renderLabel(): void;
 }
-export { JSCharting, JSCLabel, JSC };
+declare class JSCGrid extends React.Component<JSCGridComponentProps> {
+    private container;
+    constructor(props);
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    componentDidUpdate(): void;
+    render(): JSX.Element;
+    destroy(): void;
+    renderGrid(): void;
+}
+export { JSCharting, JSCLabel, JSCGrid, JSC };

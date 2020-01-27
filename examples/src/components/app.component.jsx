@@ -10,6 +10,7 @@ import MicroProgressComponent from './samples/micro-progress.component.jsx';
 import LiveDataLineComponent from './samples/live-data-line.component.jsx';
 import MethodUpdateComponent from './samples/method-update.component.jsx';
 import MaterDetailComponent from './samples/master-detail.component.jsx';
+import DataGridComponent from './samples/datagrid.component.jsx';
 import NotFoundComponent from '../not-found.component.jsx';
 
 import { JSC } from 'jscharting-react';
@@ -39,7 +40,7 @@ const samples = [
 		name: 'Micro Progress',
 		description: 'Demonstrate using JSC.label() with microcharts.',
 		path: '/samples/micro-progress'
-	}	,
+	},
 	{
 		name: 'Live Data Update',
 		description: 'Updates the chart on a timer. ',
@@ -54,6 +55,11 @@ const samples = [
 		name: 'Master Detail ',
 		description: 'A UI Slider control on one chart affects the zoom range on another. ',
 		path: '/samples/master-detail'
+	},
+	{
+		name: 'Data Grid',
+		description: 'Demonstrate using JSC.Grid().',
+		path: '/samples/data-grid'
 	}
 ];
 
@@ -117,6 +123,7 @@ export default class AppComponent extends React.Component {
 						<button style={btnStyle(5)} onClick={() => this.handleSampleChange(5)} className="examplesButton">Live Data</button>
 						<button style={btnStyle(6)} onClick={() => this.handleSampleChange(6)} className="examplesButton">Method Update</button>
 						<button style={btnStyle(7)} onClick={() => this.handleSampleChange(7)} className="examplesButton">Master Detail</button>
+						<button style={btnStyle(8)} onClick={() => this.handleSampleChange(8)} className="examplesButton">Data Grid</button>
 					</div>
 				</div>
 
@@ -134,6 +141,7 @@ export default class AppComponent extends React.Component {
 					<Route path="/samples/live-data-line" component={LiveDataLineComponent}/>
 					<Route path="/samples/method-update" component={MethodUpdateComponent}/>
 					<Route path="/samples/master-detail" component={MaterDetailComponent}/>
+					<Route path="/samples/data-grid" component={DataGridComponent}/>
 					<Route path="*" component={NotFoundComponent}/>
 				</Switch>
 			</Router>

@@ -83,10 +83,10 @@ export default class MicroProgressComponent extends React.Component {
 	render() {
 		return (
 			<div>
-				<JSCLabel config={this.state.labelConfig1} className={'progress-label'} />
-				<JSCLabel config={this.state.labelConfig2} className={'progress-label'} />
-				<JSCLabel config={this.state.labelConfig3} className={'progress-label'} />
-				<JSCLabel config={this.state.finalLabelConfig} className={'progress-label'} />
+				<JSCLabel options={this.state.labelConfig1} className={'progress-label'} />
+				<JSCLabel options={this.state.labelConfig2} className={'progress-label'} />
+				<JSCLabel options={this.state.labelConfig3} className={'progress-label'} />
+				<JSCLabel options={this.state.finalLabelConfig} className={'progress-label'} />
 			</div>
 		);
 	}
