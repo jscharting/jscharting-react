@@ -1,8 +1,8 @@
 # JSCharting for React
 
-![npm](https://img.shields.io/npm/v/jscharting-react)
+![Travis (.org) branch](https://img.shields.io/travis/jscharting/jscharting-react/master)
 ![David](https://img.shields.io/david/jscharting/jscharting-react)
-
+![npm](https://img.shields.io/npm/v/jscharting-react)
 
 <a href="https://jscharting.com"><img src="https://jscharting.com/images/logo_short.svg" style="margin:0px" align="left" hspace="10" vspace="6" width="200" ></a>
 
