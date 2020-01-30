@@ -1,3 +1,12 @@
+## [1.1.0-5] - 2020-01-29
+### Added
+- Added prop-types to components
+- Added Linters
+- Datagrid Test
+
+### Changed
+- Use findDomNode in callback-refs 
+
 ## [1.1.0-4] - 2020-01-27
 ### Added
 - JSCGrid data grid support

@@ -3,6 +3,7 @@
 ![Travis (.org) branch](https://img.shields.io/travis/jscharting/jscharting-react/master)
 ![David](https://img.shields.io/david/jscharting/jscharting-react)
 ![npm](https://img.shields.io/npm/v/jscharting-react)
+<a href="https://twitter.com/jscharting/"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjscharting%2F"></a>
 
 <a href="https://jscharting.com"><img src="https://jscharting.com/images/logo_short.svg" style="margin:0px" align="left" hspace="10" vspace="6" width="200" ></a>
 
@@ -339,7 +340,7 @@ export default class LiveDataLineComponent extends React.Component {
     componentDidMount() {
         // Using the chart reference. 
         this.chart && 
-            this.chart.series.push({name: 'S1', points:[ {x:5,y:10}, {x:5,y:10}] });
+            this.chart.series.add({name: 'S1', points:[ {x:5,y:10}, {x:5,y:10}] });
     }
     render() {
         return (

@@ -13,8 +13,9 @@ const options = {
 	]
 };
 
-const callback = chart => {
-	chart.isCallbackInvoked = true;
+let isCallbackInvoked = false;
+const callback = () => {
+	isCallbackInvoked = true;
 };
 
 describe('JSCharting unit tests', () => {
@@ -22,16 +23,16 @@ describe('JSCharting unit tests', () => {
 	const component = componentRenderer.getInstance(),
 		chart = component.instance;
 
-	test('Container was created', () => {
+	test('Chart instance was created', () => {
 		expect(chart).not.toBeUndefined();
 	});
 
 	test('Callback should be invoked.', () => {
-		expect(chart.isCallbackInvoked).toBeTruthy();
+		expect(isCallbackInvoked).toBeTruthy();
 	});
 
 	test('Chart should be destroyed after component is unmounted.', () => {
 		componentRenderer.unmount();
-		expect(component.container.current).toBeNull();
+		expect(chart.getWrapper()).toBeUndefined();
 	});
 });

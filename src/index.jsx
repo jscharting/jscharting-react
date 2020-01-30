@@ -1,13 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import * as JSC from 'jscharting';
 
 export default class JSCharting extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.container = React.createRef();
 		this.instance = undefined;
+	}
+
+	static get propTypes() { 
+		return { 
+			className: PropTypes.string,
+			callback: PropTypes.func,
+			options: PropTypes.any,
+			ignoreStateUpdate: PropTypes.bool,
+			mutable: PropTypes.bool
+		}; 
 	}
 
 	componentDidMount() {
@@ -26,7 +34,7 @@ export default class JSCharting extends React.Component {
 	}
 
 	render() {
-		return <div ref={this.container} className={this.props.className} />;
+		return <div ref={node => this.container = node} className={this.props.className}/>;
 	}
 
 	renderChart() {
@@ -43,7 +51,7 @@ export default class JSCharting extends React.Component {
 				if (this.instance) {
 					this.instance.destroy();
 				}
-				const containerElement = ReactDOM.findDOMNode(this.container.current);
+				const containerElement = this.container;
 				const config = Object.assign({ targetElement: containerElement }, options);
 				this.instance = new JSC.Chart(config, cb);
 			}
@@ -51,7 +59,7 @@ export default class JSCharting extends React.Component {
 	}
 
 	applyProperties() {
-		const containerElement = ReactDOM.findDOMNode(this.container.current);
+		const containerElement = this.container;
 		if (containerElement) {
 			const options = this.props.options || this.props;
 			const stringifySize = size => (size && Number(size) === size ? size + 'px' : size);
@@ -64,7 +72,13 @@ export default class JSCharting extends React.Component {
 class JSCLabel extends React.Component {
 	constructor(props) {
 		super(props);
-		this.container = React.createRef();
+	}
+
+	static get propTypes() { 
+		return { 
+			className: PropTypes.string,
+			options: PropTypes.any
+		}; 
 	}
 
 	componentDidMount() {
@@ -80,11 +94,11 @@ class JSCLabel extends React.Component {
 	}
 
 	render() {
-		return <div ref={this.container} className={this.props.className} />;
+		return <div ref={node => this.container = node} className={this.props.className} />;
 	}
 
 	destroy() {
-		const containerElement = ReactDOM.findDOMNode(this.container.current);
+		const containerElement = this.container;
 		if (containerElement) {
 			containerElement.innerHTML = '';
 		}
@@ -92,17 +106,26 @@ class JSCLabel extends React.Component {
 
 	renderLabel() {
 		this.destroy();
-		const containerElement = ReactDOM.findDOMNode(this.container.current);
-		JSC.label(containerElement, this.props.options);
+		const containerElement = this.container;
+		const options = this.props.options;
+		const textProperty = options && options.text;
+		JSC.label(containerElement, textProperty || options, textProperty && options);
 	}
 }
 
 class JSCGrid extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.container = React.createRef();
 		this.instance = undefined;
+	}
+
+	static get propTypes() { 
+		return { 
+			className: PropTypes.string,
+			callback: PropTypes.func,
+			options: PropTypes.any,
+			mutable: PropTypes.bool
+		}; 
 	}
 
 	componentDidMount() {
@@ -118,7 +141,7 @@ class JSCGrid extends React.Component {
 	}
 
 	render() {
-		return <div ref={this.container} className={this.props.className} />;
+		return <div ref={node => this.container = node} className={this.props.className} />;
 	}
 
 	renderGrid() {
@@ -130,7 +153,7 @@ class JSCGrid extends React.Component {
 			this.instance.options(options);
 		} else {
 			this.instance && this.instance.destroy();
-			const containerElement = ReactDOM.findDOMNode(this.container.current);
+			const containerElement = this.container;
 			JSC.Grid(containerElement, options).then(grid => {
 				this.instance = grid;
 				cb && cb(grid);
