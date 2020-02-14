@@ -1,4 +1,8 @@
-## [1.1.0-5] - 2020-01-29
+## [1.1.0-6]
+### Changed
+- Make prop-types external
+
+## [1.1.0-5] - 2020-01-30
 ### Added
 - Added prop-types to components
 - Added Linters

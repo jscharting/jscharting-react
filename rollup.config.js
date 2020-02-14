@@ -36,5 +36,5 @@ export default {
 		resolve(),
 		commonjs()
 	],
-	external: ['react', 'react-dom', 'jscharting']
+	external: ['react', 'react-dom', 'jscharting', 'prop-types']
 };
