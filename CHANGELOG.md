@@ -1,4 +1,16 @@
-## [1.1.0-6]
+## [1.1.0-7] - 2020-2-21
+
+### Changed
+- Readme: Logo update, prettier badge
+- Test against built files
+
+### Added
+- Prettier code styling
+
+### Removed
+- prop-types
+
+## [1.1.0-6] - 2020-2-14
 ### Changed
 - Make prop-types external
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { JSCharting } from '../src/index';
+import { JSCharting } from '../dist/jscharting-react.es';
 import renderer from 'react-test-renderer';
 
 const options = {
@@ -19,7 +19,9 @@ const callback = () => {
 };
 
 describe('JSCharting unit tests', () => {
-	const componentRenderer = renderer.create(<JSCharting options={options} callback={callback} />);
+	const componentRenderer = renderer.create(
+		<JSCharting options={options} callback={callback} />
+	);
 	const component = componentRenderer.getInstance(),
 		chart = component.instance;
 

@@ -1,6 +1,6 @@
 {
   "name": "jscharting-react",
-  "version": "1.1.0-6",
+  "version": "1.1.0-7",
   "description": "JSCharting plugin for react",
   "homepage": "https://jscharting.com",
   "author": "JSCharting <support@jscharting.com> (https://jscharting.com/support.htm)",
@@ -11,12 +11,15 @@
   "main": "dist/jscharting-react.js",
   "module": "dist/jscharting-react.es.js",
   "jsnext:main": "dist/jscharting-react.es.js",
+  "typings": "./dist/jscharting-react.d.ts",
+  "types": "./dist/jscharting-react.d.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run format && rollup -c",
     "build-examples": "cd examples && npm install && npm run build",
     "start-examples": "cd examples && npm install && npm run start",
+    "format": "prettier --config ./.prettierrc.js --write src/*.jsx tests/*.js",
     "lint": "eslint src/*.jsx",
-    "test": "jest"
+    "test": "npm run build && jest"
   },
   "repository": {
     "type": "git",
@@ -35,6 +38,8 @@
     "jscharting": "^2.9.0-7"
   },
   "devDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
@@ -46,9 +51,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.0",
     "jest": "^25.1.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "rollup": "^1.30.1",
     "rollup-plugin-babel": "^4.3.3",

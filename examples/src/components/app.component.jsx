@@ -113,7 +113,7 @@ export default class AppComponent extends React.Component {
 		return (
 			<Router>
 				<div className="examplesHead">
-					<a href="https://jscharting.com"><img src="https://jscharting.com/images/logo.svg" title="JSCharting" alt="JSCharting JavaScript Chart Library" /></a> <span className="examplesLabel">for React</span>
+					<a href="https://jscharting.com"><img src="https://jscharting.com/images/jsc-react-logo.svg" style={({width:200})} title="JSCharting" alt="JSCharting JavaScript Chart Library" /></a>
 					<div className="examplesItems">
 						<button style={btnStyle(0)} onClick={() => this.handleSampleChange(0)} className="examplesButton">Infographic</button>
 						<button style={btnStyle(1)} onClick={() => this.handleSampleChange(1)} className="examplesButton">Calendar - Events</button>

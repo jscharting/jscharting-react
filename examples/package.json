@@ -1,7 +1,7 @@
 {
   "name": "jscharting-react-examples",
   "version": "1.0.1",
-  "description": "Examples using the JSCharting plugin for react.",
+  "description": "Examples using the JSCharting plugin for React.",
   "scripts": {
     "start": "webpack-dev-server --mode development --display-error-details",
     "build": "webpack",
@@ -24,7 +24,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "history": "^4.10.1",
     "html-loader": "^0.5.5",
-    "jscharting-react": "^1.1.0-6",
+    "jscharting-react": "^1.1.0-7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-jss": "^10.0.4",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { JSCLabel } from '../src/index';
+import { JSCLabel } from '../dist/jscharting-react.es';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -19,7 +19,7 @@ describe('JSCLabel unit tests', () => {
 	});
 
 	test('Label should be destroyed after component is unmounted.', () => {
-		const { unmount, container } = render(<JSCLabel options={options}/>);
+		const { unmount, container } = render(<JSCLabel options={options} />);
 		unmount();
 		expect(container.innerHTML).toBe('');
 	});
