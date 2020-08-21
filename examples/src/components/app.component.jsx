@@ -17,9 +17,9 @@ import { JSC } from 'jscharting-react';
 
 const samples = [
 	{
-		name: 'Cooking',
-		description: 'Cooking dashboard using JavaScript charts.',
-		path: '/cooking'
+		name: 'Master Detail ',
+		description: 'A UI Slider control on one chart affects the zoom range on another. ',
+		path: '/samples/master-detail'
 	},
 	{
 		name: 'Calendar Events',
@@ -52,9 +52,9 @@ const samples = [
 		path: '/samples/method-update'
 	},
 	{
-		name: 'Master Detail ',
-		description: 'A UI Slider control on one chart affects the zoom range on another. ',
-		path: '/samples/master-detail'
+		name: 'Cooking',
+		description: 'Cooking dashboard using JavaScript charts.',
+		path: '/cooking'
 	},
 	{
 		name: 'Data Grid',
@@ -115,14 +115,14 @@ export default class AppComponent extends React.Component {
 				<div className="examplesHead">
 					<a href="https://jscharting.com"><img src="https://jscharting.com/images/jsc-react-logo.svg" style={({width:200})} title="JSCharting" alt="JSCharting JavaScript Chart Library" /></a>
 					<div className="examplesItems">
-						<button style={btnStyle(0)} onClick={() => this.handleSampleChange(0)} className="examplesButton">Infographic</button>
+						<button style={btnStyle(0)} onClick={() => this.handleSampleChange(0)} className="examplesButton">Master Detail</button>
 						<button style={btnStyle(1)} onClick={() => this.handleSampleChange(1)} className="examplesButton">Calendar - Events</button>
 						<button style={btnStyle(2)} onClick={() => this.handleSampleChange(2)} className="examplesButton">Calendar - Heatmap</button>
 						<button style={btnStyle(3)} onClick={() => this.handleSampleChange(3)} className="examplesButton">Radar</button>
 						<button style={btnStyle(4)} onClick={() => this.handleSampleChange(4)} className="examplesButton">MicroCharts</button>
 						<button style={btnStyle(5)} onClick={() => this.handleSampleChange(5)} className="examplesButton">Live Data</button>
 						<button style={btnStyle(6)} onClick={() => this.handleSampleChange(6)} className="examplesButton">Method Update</button>
-						<button style={btnStyle(7)} onClick={() => this.handleSampleChange(7)} className="examplesButton">Master Detail</button>
+						<button style={btnStyle(7)} onClick={() => this.handleSampleChange(7)} className="examplesButton">Infographic</button>
 						<button style={btnStyle(8)} onClick={() => this.handleSampleChange(8)} className="examplesButton">Data Grid</button>
 					</div>
 				</div>
@@ -132,15 +132,15 @@ export default class AppComponent extends React.Component {
 				</div>
 
 				<Switch>
-					<Redirect from="/" to="cooking" exact />
-					<Route path="/cooking" component={CookingComponent}/>
+					<Redirect from="/" to="/samples/master-detail" exact />
+					<Route path="/samples/master-detail" component={MaterDetailComponent}/>
 					<Route path="/calendar-events" component={CalendarEventsComponent}/>
 					<Route path="/calendar-injuries" component={CalendarInjuriesComponent}/>
 					<Route path="/radar-colInverted" component={RadarColInvertedComponent}/>
 					<Route path="/samples/micro-progress" component={MicroProgressComponent}/>
 					<Route path="/samples/live-data-line" component={LiveDataLineComponent}/>
 					<Route path="/samples/method-update" component={MethodUpdateComponent}/>
-					<Route path="/samples/master-detail" component={MaterDetailComponent}/>
+					<Route path="/cooking" component={CookingComponent}/>
 					<Route path="/samples/data-grid" component={DataGridComponent}/>
 					<Route path="*" component={NotFoundComponent}/>
 				</Switch>
