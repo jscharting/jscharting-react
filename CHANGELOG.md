@@ -1,3 +1,8 @@
+## [1.2.0] - 2020-10-27
+
+### Changed
+- Integrated with JSCharting v3.0.1
+
 ## [1.1.0-7] - 2020-2-21
 
 ### Changed

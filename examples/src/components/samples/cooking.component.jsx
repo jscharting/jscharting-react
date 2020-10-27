@@ -3,7 +3,7 @@ import { JSCharting } from 'jscharting-react';
 
 const template = {
 	box_fill: '#c2b59b',
-	defaultSeries_opacity: 0,
+	defaultSeries_opacity: 1,
 	legend_visible: false,
 	toolbar_visible: false,
 	chartArea: {
