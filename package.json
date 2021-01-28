@@ -1,6 +1,6 @@
 {
   "name": "jscharting-react",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JSCharting plugin for react",
   "homepage": "https://jscharting.com",
   "author": "JSCharting <support@jscharting.com> (https://jscharting.com/support.htm)",
@@ -35,7 +35,7 @@
     "react"
   ],
   "dependencies": {
-    "jscharting": "^3.0.1"
+    "jscharting": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
